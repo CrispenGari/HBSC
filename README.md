@@ -6,6 +6,11 @@
     <img src="cover.webp" width="100%" alt="cover"/>
 </p>
 
+<p align="center">
+<a href="https://github.com/crispengari/HBSC/actions/workflows/CI.yml"><img src="https://github.com/crispengari/HBSC/actions/workflows/ci.yml/badge.svg"></a>
+<a href="/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green"></a>
+</p>
+
 ### Getting started
 
 To test this server locally you first need to clone this repository by running the following command:
