@@ -5,8 +5,53 @@ on:
       - main
 
 jobs:
-  build:
+  build-ubuntu:
+    name: Building Ubuntu
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./server/
+    steps:
+      - name: Cloning repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Tests
+        run: pytest
+
+  build-macos:
+    name: Building MacOs
+    runs-on: macos-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./server/
+    steps:
+      - name: Cloning repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Tests
+        run: pytest
+
+  build-windows:
+    name: Building Windows
+    runs-on: window-latest
     defaults:
       run:
         shell: bash
