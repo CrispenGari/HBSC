@@ -1,5 +1,4 @@
-import pytest
-import requests
+import httpx
 
 url = "http://127.0.0.1:3001"
 
@@ -20,7 +19,7 @@ class TestAPI:
             }
         }
         """
-        res = requests.post(url, json={"query": q})
+        res = httpx.post(url, json={"query": q})
         assert res.json() == {
             "data": {
                 "meta": {
